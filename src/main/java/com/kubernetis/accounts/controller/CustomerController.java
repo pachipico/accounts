@@ -1,12 +1,11 @@
 package com.kubernetis.accounts.controller;
 
+import com.kubernetis.accounts.dto.CustomerDto;
 import com.kubernetis.accounts.service.CustomerService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/customers")
@@ -22,6 +21,11 @@ public class CustomerController {
 
 
         return 1L;
+    }
+
+    @GetMapping("/{id}")
+    public CustomerDto getCustomerById(@PathVariable(name = "id") Long id) {
+        return customerService.findById(id);
     }
 
 }

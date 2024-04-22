@@ -1,6 +1,7 @@
 package com.kubernetis.accounts.service;
 
 import com.kubernetis.accounts.dto.CustomerDto;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -12,7 +13,7 @@ public interface IAccountsService {
      */
     void createAccount(CustomerDto dto);
 
-    CustomerDto getCustomer(String id);
+    CustomerDto fetchAccount(String mobileNumber);
 
     List<CustomerDto> getCustomers();
 

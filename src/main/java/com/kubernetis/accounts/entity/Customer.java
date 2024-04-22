@@ -5,6 +5,7 @@ import lombok.*;
 import org.hibernate.annotations.GenericGenerator;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Getter
@@ -27,10 +28,4 @@ public class Customer extends BaseEntity {
     @Column(name = "mobile_number")
     private String mobileNumber;
 
-    public Customer(String name, String email, String mobileNumber) {
-        super(LocalDateTime.now(), "tester", null, null);
-        this.name = name;
-        this.email = email;
-        this.mobileNumber = mobileNumber;
-    }
 }
